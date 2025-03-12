@@ -1,0 +1,8 @@
+{
+    "token_type": "Bearer",
+    "access_token": "Access token",
+    "user": {
+        "email": "user@email.com",
+        "name": "User name"
+    }
+}
