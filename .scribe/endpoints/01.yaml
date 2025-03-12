@@ -5,6 +5,67 @@ description: |-
 endpoints:
   -
     httpMethods:
+      - POST
+    uri: 'api/user/bookmarks/{bookmark_id}/restore'
+    metadata:
+      groupName: Bookmarks
+      groupDescription: |-
+
+        API endpoints for managing user Bookmarks
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Restore bookmark'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      bookmark_id:
+        name: bookmark_id
+        description: 'The ID of the bookmark.'
+        required: true
+        example: facere
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      bookmark_id: facere
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "id": "uuid",
+              "url": "url",
+              "title": "Title",
+              "description": null,
+              "created_at": "date",
+              "deleted": false
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3a5EcDae4k1V6d86vhZgPfb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - GET
     uri: api/user/bookmarks
     metadata:
@@ -29,7 +90,7 @@ endpoints:
         name: q
         description: ''
         required: false
-        example: atque
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -39,7 +100,7 @@ endpoints:
         name: page
         description: ''
         required: false
-        example: 6
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -49,22 +110,22 @@ endpoints:
         name: per_page
         description: ''
         required: false
-        example: 5
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanQueryParameters:
-      q: atque
-      page: 6
-      per_page: 5
+      q: velit
+      page: 15
+      per_page: 16
     bodyParameters:
       q:
         name: q
         description: ''
         required: false
-        example: aut
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -74,7 +135,7 @@ endpoints:
         name: per_page
         description: 'Must be at least 1.'
         required: false
-        example: 71
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -84,16 +145,16 @@ endpoints:
         name: page
         description: 'Must be at least 1.'
         required: false
-        example: 75
+        example: 56
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      q: aut
-      per_page: 71
-      page: 75
+      q: rerum
+      per_page: 1
+      page: 56
     fileParameters: []
     responses:
       -
@@ -124,7 +185,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pe4E6bf8vc1h53a6DZdakVg'
+      - 'Bearer eE63gvkPVZ1b5fD6dh4aca8'
     controller: null
     method: null
     route: null
@@ -157,14 +218,14 @@ endpoints:
         name: url
         description: ''
         required: true
-        example: 'https://www.hoeger.biz/rerum-incidunt-architecto-quis-consectetur'
+        example: 'http://kertzmann.com/'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      url: 'https://www.hoeger.biz/rerum-incidunt-architecto-quis-consectetur'
+      url: 'http://kertzmann.com/'
     fileParameters: []
     responses:
       -
@@ -185,7 +246,60 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6aD6hcEdV13egf5Zbk8aP4v'
+      - 'Bearer 3b6ag8k5VDdf4hc1Pv6aEZe'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/user/bookmarks/{id}'
+    metadata:
+      groupName: Bookmarks
+      groupDescription: |-
+
+        API endpoints for managing user Bookmarks
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Destroy bookmark'
+      description: 'soft delete or force delete if already trashed.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the bookmark.'
+        required: true
+        example: temporibus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: temporibus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: '{}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Va4bZc8a6EP3khvDde1f6g5'
     controller: null
     method: null
     route: null

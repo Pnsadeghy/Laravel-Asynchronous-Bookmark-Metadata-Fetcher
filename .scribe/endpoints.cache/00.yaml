@@ -32,7 +32,7 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: johnnie27@example.org
+        example: iluettgen@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -42,15 +42,15 @@ endpoints:
         name: password
         description: 'minimum character length is 6'
         required: true
-        example: 'tp]CCwqS$s(n|Ls+jI'
+        example: _%Pu5Y;=>0~z)mg1R
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: johnnie27@example.org
-      password: 'tp]CCwqS$s(n|Ls+jI'
+      email: iluettgen@example.org
+      password: _%Pu5Y;=>0~z)mg1R
     fileParameters: []
     responses:
       -
@@ -100,7 +100,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: et
+        example: tempora
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,7 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: nikki81@example.com
+        example: monserrate14@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,7 +120,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '+w#)/xo"[:.$+Z0'
+        example: '"E:dybuKLl[Qf;g'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -130,17 +130,17 @@ endpoints:
         name: password_confirmation
         description: ''
         required: true
-        example: omnis
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: et
-      email: nikki81@example.com
-      password: '+w#)/xo"[:.$+Z0'
-      password_confirmation: omnis
+      name: tempora
+      email: monserrate14@example.org
+      password: '"E:dybuKLl[Qf;g'
+      password_confirmation: dolor
     fileParameters: []
     responses:
       -
@@ -194,7 +194,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z3hEfeP8Vca5Dgv46k1ba6d'
+      - 'Bearer 6gd1bfk5a8eD4vaVEZPc6h3'
     controller: null
     method: null
     route: null

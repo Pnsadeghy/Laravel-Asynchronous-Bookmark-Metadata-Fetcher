@@ -87,11 +87,17 @@
                     <a href="#bookmarks">Bookmarks</a>
                 </li>
                                     <ul id="tocify-subheader-bookmarks" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="bookmarks-GETapi-user-bookmarks">
+                                                    <li class="tocify-item level-2" data-unique="bookmarks-POSTapi-user-bookmarks--bookmark_id--restore">
+                                <a href="#bookmarks-POSTapi-user-bookmarks--bookmark_id--restore">Restore bookmark</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="bookmarks-GETapi-user-bookmarks">
                                 <a href="#bookmarks-GETapi-user-bookmarks">All bookmarks</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="bookmarks-POSTapi-user-bookmarks">
                                 <a href="#bookmarks-POSTapi-user-bookmarks">Store bookmark</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="bookmarks-DELETEapi-user-bookmarks--id-">
+                                <a href="#bookmarks-DELETEapi-user-bookmarks--id-">Destroy bookmark</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -145,8 +151,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"johnnie27@example.org\",
-    \"password\": \"tp]CCwqS$s(n|Ls+jI\"
+    \"email\": \"iluettgen@example.org\",
+    \"password\": \"_%Pu5Y;=&gt;0~z)mg1R\"
 }"
 </code></pre></div>
 
@@ -162,8 +168,8 @@ const headers = {
 };
 
 let body = {
-    "email": "johnnie27@example.org",
-    "password": "tp]CCwqS$s(n|Ls+jI"
+    "email": "iluettgen@example.org",
+    "password": "_%Pu5Y;=&gt;0~z)mg1R"
 };
 
 fetch(url, {
@@ -266,10 +272,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-auth-login"
-               value="johnnie27@example.org"
+               value="iluettgen@example.org"
                data-component="body">
     <br>
-<p>Example: <code>johnnie27@example.org</code></p>
+<p>Example: <code>iluettgen@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -277,10 +283,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth-login"
-               value="tp]CCwqS$s(n|Ls+jI"
+               value="_%Pu5Y;=>0~z)mg1R"
                data-component="body">
     <br>
-<p>minimum character length is 6 Example: <code>tp]CCwqS$s(n|Ls+jI</code></p>
+<p>minimum character length is 6 Example: <code>_%Pu5Y;=&gt;0~z)mg1R</code></p>
         </div>
         </form>
 
@@ -301,10 +307,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"et\",
-    \"email\": \"nikki81@example.com\",
-    \"password\": \"+w#)\\/xo\\\"[:.$+Z0\",
-    \"password_confirmation\": \"omnis\"
+    \"name\": \"tempora\",
+    \"email\": \"monserrate14@example.org\",
+    \"password\": \"\\\"E:dybuKLl[Qf;g\",
+    \"password_confirmation\": \"dolor\"
 }"
 </code></pre></div>
 
@@ -320,10 +326,10 @@ const headers = {
 };
 
 let body = {
-    "name": "et",
-    "email": "nikki81@example.com",
-    "password": "+w#)\/xo\"[:.$+Z0",
-    "password_confirmation": "omnis"
+    "name": "tempora",
+    "email": "monserrate14@example.org",
+    "password": "\"E:dybuKLl[Qf;g",
+    "password_confirmation": "dolor"
 };
 
 fetch(url, {
@@ -426,10 +432,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-auth-register"
-               value="et"
+               value="tempora"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>tempora</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -437,10 +443,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-auth-register"
-               value="nikki81@example.com"
+               value="monserrate14@example.org"
                data-component="body">
     <br>
-<p>Example: <code>nikki81@example.com</code></p>
+<p>Example: <code>monserrate14@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -448,10 +454,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth-register"
-               value="+w#)/xo"[:.$+Z0"
+               value=""E:dybuKLl[Qf;g"
                data-component="body">
     <br>
-<p>Example: <code>+w#)/xo"[:.$+Z0</code></p>
+<p>Example: <code>"E:dybuKLl[Qf;g</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
@@ -459,10 +465,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password_confirmation"                data-endpoint="POSTapi-auth-register"
-               value="omnis"
+               value="dolor"
                data-component="body">
     <br>
-<p>Example: <code>omnis</code></p>
+<p>Example: <code>dolor</code></p>
         </div>
         </form>
 
@@ -592,7 +598,155 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
     <p>API endpoints for managing user Bookmarks</p>
 
-                                <h2 id="bookmarks-GETapi-user-bookmarks">All bookmarks</h2>
+                                <h2 id="bookmarks-POSTapi-user-bookmarks--bookmark_id--restore">Restore bookmark</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-user-bookmarks--bookmark_id--restore">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/user/bookmarks/facere/restore" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/user/bookmarks/facere/restore"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-user-bookmarks--bookmark_id--restore">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: &quot;uuid&quot;,
+    &quot;url&quot;: &quot;url&quot;,
+    &quot;title&quot;: &quot;Title&quot;,
+    &quot;description&quot;: null,
+    &quot;created_at&quot;: &quot;date&quot;,
+    &quot;deleted&quot;: false
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-user-bookmarks--bookmark_id--restore" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-user-bookmarks--bookmark_id--restore"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-bookmarks--bookmark_id--restore"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-user-bookmarks--bookmark_id--restore" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-bookmarks--bookmark_id--restore">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-user-bookmarks--bookmark_id--restore" data-method="POST"
+      data-path="api/user/bookmarks/{bookmark_id}/restore"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-bookmarks--bookmark_id--restore', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-user-bookmarks--bookmark_id--restore"
+                    onclick="tryItOut('POSTapi-user-bookmarks--bookmark_id--restore');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-user-bookmarks--bookmark_id--restore"
+                    onclick="cancelTryOut('POSTapi-user-bookmarks--bookmark_id--restore');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-user-bookmarks--bookmark_id--restore"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/user/bookmarks/{bookmark_id}/restore</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-user-bookmarks--bookmark_id--restore"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-user-bookmarks--bookmark_id--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-user-bookmarks--bookmark_id--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>bookmark_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bookmark_id"                data-endpoint="POSTapi-user-bookmarks--bookmark_id--restore"
+               value="facere"
+               data-component="url">
+    <br>
+<p>The ID of the bookmark. Example: <code>facere</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="bookmarks-GETapi-user-bookmarks">All bookmarks</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -606,14 +760,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/user/bookmarks?q=atque&amp;page=6&amp;per_page=5" \
+    --get "http://localhost:8000/api/user/bookmarks?q=velit&amp;page=15&amp;per_page=16" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"q\": \"aut\",
-    \"per_page\": 71,
-    \"page\": 75
+    \"q\": \"rerum\",
+    \"per_page\": 1,
+    \"page\": 56
 }"
 </code></pre></div>
 
@@ -624,9 +778,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "q": "atque",
-    "page": "6",
-    "per_page": "5",
+    "q": "velit",
+    "page": "15",
+    "per_page": "16",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -638,9 +792,9 @@ const headers = {
 };
 
 let body = {
-    "q": "aut",
-    "per_page": 71,
-    "page": 75
+    "q": "rerum",
+    "per_page": 1,
+    "page": 56
 };
 
 fetch(url, {
@@ -764,10 +918,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="q"                data-endpoint="GETapi-user-bookmarks"
-               value="atque"
+               value="velit"
                data-component="query">
     <br>
-<p>Example: <code>atque</code></p>
+<p>Example: <code>velit</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
@@ -775,10 +929,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="page"                data-endpoint="GETapi-user-bookmarks"
-               value="6"
+               value="15"
                data-component="query">
     <br>
-<p>Example: <code>6</code></p>
+<p>Example: <code>15</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
@@ -786,10 +940,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="per_page"                data-endpoint="GETapi-user-bookmarks"
-               value="5"
+               value="16"
                data-component="query">
     <br>
-<p>Example: <code>5</code></p>
+<p>Example: <code>16</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -798,10 +952,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="q"                data-endpoint="GETapi-user-bookmarks"
-               value="aut"
+               value="rerum"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
@@ -809,10 +963,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="per_page"                data-endpoint="GETapi-user-bookmarks"
-               value="71"
+               value="1"
                data-component="body">
     <br>
-<p>Must be at least 1. Example: <code>71</code></p>
+<p>Must be at least 1. Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
@@ -820,10 +974,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="page"                data-endpoint="GETapi-user-bookmarks"
-               value="75"
+               value="56"
                data-component="body">
     <br>
-<p>Must be at least 1. Example: <code>75</code></p>
+<p>Must be at least 1. Example: <code>56</code></p>
         </div>
         </form>
 
@@ -846,7 +1000,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"url\": \"https:\\/\\/www.hoeger.biz\\/rerum-incidunt-architecto-quis-consectetur\"
+    \"url\": \"http:\\/\\/kertzmann.com\\/\"
 }"
 </code></pre></div>
 
@@ -863,7 +1017,7 @@ const headers = {
 };
 
 let body = {
-    "url": "https:\/\/www.hoeger.biz\/rerum-incidunt-architecto-quis-consectetur"
+    "url": "http:\/\/kertzmann.com\/"
 };
 
 fetch(url, {
@@ -977,12 +1131,152 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="url"                data-endpoint="POSTapi-user-bookmarks"
-               value="https://www.hoeger.biz/rerum-incidunt-architecto-quis-consectetur"
+               value="http://kertzmann.com/"
                data-component="body">
     <br>
-<p>Example: <code>https://www.hoeger.biz/rerum-incidunt-architecto-quis-consectetur</code></p>
+<p>Example: <code>http://kertzmann.com/</code></p>
         </div>
         </form>
+
+                    <h2 id="bookmarks-DELETEapi-user-bookmarks--id-">Destroy bookmark</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>soft delete or force delete if already trashed.</p>
+
+<span id="example-requests-DELETEapi-user-bookmarks--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8000/api/user/bookmarks/temporibus" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/user/bookmarks/temporibus"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-user-bookmarks--id-">
+            <blockquote>
+            <p>Example response (204):</p>
+        </blockquote>
+                <pre>
+<code>Empty response</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-user-bookmarks--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-user-bookmarks--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-user-bookmarks--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-user-bookmarks--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-user-bookmarks--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-user-bookmarks--id-" data-method="DELETE"
+      data-path="api/user/bookmarks/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-user-bookmarks--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-user-bookmarks--id-"
+                    onclick="tryItOut('DELETEapi-user-bookmarks--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-user-bookmarks--id-"
+                    onclick="cancelTryOut('DELETEapi-user-bookmarks--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-user-bookmarks--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/user/bookmarks/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-user-bookmarks--id-"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-user-bookmarks--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-user-bookmarks--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-user-bookmarks--id-"
+               value="temporibus"
+               data-component="url">
+    <br>
+<p>The ID of the bookmark. Example: <code>temporibus</code></p>
+            </div>
+                    </form>
 
             
 
