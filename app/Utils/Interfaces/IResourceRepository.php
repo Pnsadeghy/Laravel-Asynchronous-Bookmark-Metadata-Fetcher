@@ -10,6 +10,8 @@ interface IResourceRepository
 
     public function all(array $columns = ['*']);
 
+    public function withTrashed();
+
     public function paginate(
         int $perPage,
         string $sortBy = "created_at",

@@ -75,6 +75,12 @@ class ResourceRepository implements IResourceRepository
         return $this->model->select($columns)->get();
     }
 
+    public function withTrashed(): IResourceRepository
+    {
+        $this->model = $this->model->withTrashed();
+        return $this;
+    }
+
     public function search(string $search): IResourceRepository
     {
         if (empty($search)) {
