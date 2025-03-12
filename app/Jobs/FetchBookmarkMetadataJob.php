@@ -29,7 +29,7 @@ class FetchBookmarkMetadataJob implements ShouldQueue
     public function __construct(string $bookmarkId)
     {
         $this->bookmarkId = $bookmarkId;
-        $this->onQueue('bookmarks_queue');
+        $this->onQueue(env('RABBITMQ_QUEUE'));
     }
 
     /**

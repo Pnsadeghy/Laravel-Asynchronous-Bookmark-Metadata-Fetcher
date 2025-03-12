@@ -11,6 +11,9 @@ services:
             - .:/var/www/html
         networks:
             - app_network
+        depends_on:
+            - rabbitmq
+            - mysql
 
     nginx:
         image: nginx:latest
@@ -19,6 +22,33 @@ services:
             - ./.deploy/nginx.conf:/etc/nginx/nginx.conf
         ports:
             - "80:80"
+        networks:
+            - app_network
+        depends_on:
+            - app
+
+    worker:
+        build:
+            context: .
+            dockerfile: .deploy/Dockerfile.production
+        volumes:
+            - .:/var/www/html
+        command: php artisan queue:work rabbitmq --tries=3 --timeout=60
+        environment:
+            - APP_ENV=production
+        networks:
+            - app_network
+        depends_on:
+            - rabbitmq
+            - mysql
+
+    rabbitmq:
+        image: rabbitmq:3-management
+        ports:
+            - "5672:5672"
+        environment:
+            - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
+            - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASSWORD}
         networks:
             - app_network
 
@@ -31,15 +61,6 @@ services:
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
         volumes:
             - mysql_data:/var/lib/mysql
-        networks:
-            - app_network
-
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin:latest
-        environment:
-            PMA_HOST: mysql
-        ports:
-            - "8080:80"
         networks:
             - app_network
 

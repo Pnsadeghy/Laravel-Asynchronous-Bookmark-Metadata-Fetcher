@@ -13,6 +13,33 @@ services:
       - .:/var/www/html
     networks:
       - app_network
+    depends_on:
+      - rabbitmq
+      - mysql
+
+  worker:
+    build:
+      context: .
+      dockerfile: .deploy/Dockerfile.local
+    volumes:
+      - .:/var/www/html
+    command: php artisan queue:work rabbitmq --tries=3
+    depends_on:
+      - rabbitmq
+      - mysql
+    networks:
+      - app_network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASSWORD}
+    networks:
+      - app_network
 
   mysql:
     image: mysql:8.0

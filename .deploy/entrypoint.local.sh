@@ -12,5 +12,6 @@ fi
 chmod -R 775 /var/www/html
 
 composer install --optimize-autoloader
+git config --global --add safe.directory /var/www/html
 
 exec "$@"
