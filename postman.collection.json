@@ -1,0 +1,310 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost:8000"
+        }
+    ],
+    "info": {
+        "name": "Asynchronous Bookmark Metadata Fetcher",
+        "_postman_id": "2c75531e-8b56-48c1-93d4-831e8604e6f4",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+            "description": "\nAPI endpoints for managing auth",
+            "item": [
+                {
+                    "name": "Login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"iluettgen@example.org\",\"password\":\"_%Pu5Y;=>0~z)mg1R\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"Access token\",\n    \"user\": {\n        \"email\": \"user@email.com\",\n        \"name\": \"User name\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"tempora\",\"email\":\"monserrate14@example.org\",\"password\":\"\\\"E:dybuKLl[Qf;g\",\"password_confirmation\":\"dolor\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"Access token\",\n    \"user\": {\n        \"email\": \"user@email.com\",\n        \"name\": \"User name\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Bookmarks",
+            "description": "\nAPI endpoints for managing user Bookmarks",
+            "item": [
+                {
+                    "name": "Restore bookmark",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/bookmarks\/:bookmark_id\/restore",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/bookmarks\/:bookmark_id\/restore",
+                            "variable": [
+                                {
+                                    "id": "bookmark_id",
+                                    "key": "bookmark_id",
+                                    "value": "facere",
+                                    "description": "The ID of the bookmark."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"id\": \"uuid\",\n    \"url\": \"url\",\n    \"title\": \"Title\",\n    \"description\": null,\n    \"created_at\": \"date\",\n    \"deleted\": false\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "All bookmarks",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/bookmarks",
+                            "query": [
+                                {
+                                    "key": "q",
+                                    "value": "velit",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "15",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "16",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/user\/bookmarks?q=velit&page=15&per_page=16"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"q\":\"rerum\",\"per_page\":1,\"page\":56}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": \"uuid\",\n            \"url\": \"url\",\n            \"title\": \"Title\",\n            \"description\": null,\n            \"created_at\": \"date\",\n            \"deleted\": false\n        }\n    ],\n    \"meta\": {\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"per_page\": 10,\n        \"total\": 2\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store bookmark",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/bookmarks",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/bookmarks"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"url\":\"http:\\\/\\\/kertzmann.com\\\/\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n    \"id\": \"uuid\",\n    \"url\": \"url\",\n    \"title\": \"Title\",\n    \"description\": null,\n    \"created_at\": \"date\",\n    \"deleted\": false\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Destroy bookmark",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/bookmarks\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/bookmarks\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "temporibus",
+                                    "description": "The ID of the bookmark."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "soft delete or force delete if already trashed."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 204,
+                            "body": "{}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "key",
+                "type": "string"
+            }
+        ]
+    }
+}
