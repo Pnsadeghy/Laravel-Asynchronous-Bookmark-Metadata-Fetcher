@@ -26,6 +26,9 @@ This is a minimal API built with Laravel 11, designed to allow users to submit w
 - Phpmyadmin: http://localhost:8080
 - Api Documentation: http://localhost:8000/docs
 
+## Files
+- [Postman collection](https://github.com/Pnsadeghy/Laravel-Asynchronous-Bookmark-Metadata-Fetcher/blob/master/postman.collection.json)
+
 ### Framework Documentation
 - [Laravel 11](https://laravel.com/docs/11.x)
 
