@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CommonIndexRequest;
 use App\Http\Requests\User\Bookmark\UserBookmarkStoreRequest;
 use App\Http\Resources\User\Bookmark\UserBookmarkResource;
+use App\Models\Bookmark;
 use App\Repositories\Interfaces\IBookmarkRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Response;
 
 /**
  * @group Bookmarks
@@ -56,5 +58,33 @@ class BookmarksController extends Controller
         $bookmark = $this->repository->store($request->validated());
 
         return response()->json(UserBookmarkResource::make($bookmark), 201);
+    }
+
+    /**
+     * Restore bookmark
+     *
+     * @responseFile 200 resources/responses/User/Bookmark/restore.json
+     */
+    public function restore(Bookmark $bookmark): JsonResponse
+    {
+        if ($bookmark->trashed()) {
+            $bookmark->restore();
+        }
+
+        return response()->json(UserBookmarkResource::make($bookmark), 200);
+    }
+
+    /**
+     * Destroy bookmark
+     *
+     * soft delete or force delete if already trashed.
+     *
+     * @response 204
+     */
+    public function destroy(Bookmark $bookmark): Response
+    {
+        $this->repository->smartDelete($bookmark);
+
+        return response()->noContent();
     }
 }

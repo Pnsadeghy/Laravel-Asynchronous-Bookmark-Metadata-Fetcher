@@ -136,6 +136,16 @@ class ResourceRepository implements IResourceRepository
         $model->delete();
     }
 
+    public function smartDelete(Model|string $model): void
+    {
+        $model = $this->find($model);
+        if ($model->trashed()) {
+            $model->forceDelete();
+        } else {
+            $model->delete();
+        }
+    }
+
     public function __call(string $method, array $arguments)
     {
         $result = $this->model->{$method}(...$arguments);

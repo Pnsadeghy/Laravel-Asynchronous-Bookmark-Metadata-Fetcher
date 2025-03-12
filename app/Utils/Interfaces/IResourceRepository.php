@@ -32,4 +32,6 @@ interface IResourceRepository
     public function update(Model|string $model, array $data);
 
     public function delete(Model|string $model);
+
+    public function smartDelete(Model|string $model);
 }

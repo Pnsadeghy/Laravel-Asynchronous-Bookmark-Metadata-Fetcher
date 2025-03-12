@@ -16,4 +16,9 @@ class Bookmark extends Model
         'title',
         'description'
     ];
+
+    public function resolveRouteBinding($value, $field = null)
+    {
+        return $this->withTrashed()->where($field ?? $this->getRouteKeyName(), $value)->firstOrFail();
+    }
 }

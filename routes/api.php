@@ -19,6 +19,7 @@ Route::prefix('user')
     ->name('user.')
     ->middleware(['auth:sanctum'])->group(function () {
 
+    Route::post('bookmarks/{bookmark}/restore', [BookmarksController::class, 'restore'])->name('bookmarks.restore');
     Route::apiResource("bookmarks", BookmarksController::class)
-        ->only(['index', 'store']);
+        ->only(['index', 'store', 'destroy']);
 });
