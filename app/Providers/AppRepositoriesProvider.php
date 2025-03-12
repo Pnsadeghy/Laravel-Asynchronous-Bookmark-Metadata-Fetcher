@@ -4,9 +4,11 @@ namespace App\Providers;
 
 use App\Repositories\ArticleRepository;
 use App\Repositories\AuthorRepository;
+use App\Repositories\BookmarkRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\Interfaces\IArticleRepository;
 use App\Repositories\Interfaces\IAuthorRepository;
+use App\Repositories\Interfaces\IBookmarkRepository;
 use App\Repositories\Interfaces\ICategoryRepository;
 use App\Repositories\Interfaces\INewsReaderSourceRepository;
 use App\Repositories\Interfaces\INewsSourceRepository;
@@ -22,6 +24,7 @@ class AppRepositoriesProvider extends ServiceProvider
 {
     protected array $repositoryBindings = [
         IUserRepository::class => UserRepository::class,
+        IBookmarkRepository::class => BookmarkRepository::class,
     ];
 
     /**
