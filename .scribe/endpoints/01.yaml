@@ -29,7 +29,7 @@ endpoints:
         name: q
         description: ''
         required: false
-        example: officiis
+        example: atque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -39,7 +39,7 @@ endpoints:
         name: page
         description: ''
         required: false
-        example: 12
+        example: 6
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -49,22 +49,22 @@ endpoints:
         name: per_page
         description: ''
         required: false
-        example: 1
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanQueryParameters:
-      q: officiis
-      page: 12
-      per_page: 1
+      q: atque
+      page: 6
+      per_page: 5
     bodyParameters:
       q:
         name: q
         description: ''
         required: false
-        example: dolor
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -74,7 +74,7 @@ endpoints:
         name: per_page
         description: 'Must be at least 1.'
         required: false
-        example: 31
+        example: 71
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -84,16 +84,16 @@ endpoints:
         name: page
         description: 'Must be at least 1.'
         required: false
-        example: 44
+        example: 75
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      q: dolor
-      per_page: 31
-      page: 44
+      q: aut
+      per_page: 71
+      page: 75
     fileParameters: []
     responses:
       -
@@ -124,7 +124,68 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ba61fgPchZ8vDae46kV35dE'
+      - 'Bearer Pe4E6bf8vc1h53a6DZdakVg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/user/bookmarks
+    metadata:
+      groupName: Bookmarks
+      groupDescription: |-
+
+        API endpoints for managing user Bookmarks
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store bookmark'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      url:
+        name: url
+        description: ''
+        required: true
+        example: 'https://www.hoeger.biz/rerum-incidunt-architecto-quis-consectetur'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      url: 'https://www.hoeger.biz/rerum-incidunt-architecto-quis-consectetur'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |
+          {
+              "id": "uuid",
+              "url": "url",
+              "title": "Title",
+              "description": null,
+              "created_at": "date",
+              "deleted": false
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6aD6hcEdV13egf5Zbk8aP4v'
     controller: null
     method: null
     route: null
