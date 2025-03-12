@@ -1,0 +1,8 @@
+{
+    "id": "uuid",
+    "url": "url",
+    "title": "Title",
+    "description": null,
+    "created_at": "date",
+    "deleted": false
+}

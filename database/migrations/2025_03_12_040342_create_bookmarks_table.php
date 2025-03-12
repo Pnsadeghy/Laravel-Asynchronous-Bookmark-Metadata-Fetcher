@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
-            $table->string('url');
+            $table->string('url')->unique();
             $table->string('title')->nullable();
             $table->string('description')->nullable();
 

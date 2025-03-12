@@ -4,8 +4,10 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CommonIndexRequest;
+use App\Http\Requests\User\Bookmark\UserBookmarkStoreRequest;
 use App\Http\Resources\User\Bookmark\UserBookmarkResource;
 use App\Repositories\Interfaces\IBookmarkRepository;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 /**
@@ -40,5 +42,19 @@ class BookmarksController extends Controller
                     "id", "url", "title", "description", "created_at", "deleted_at"
                 ])
         );
+    }
+
+    /**
+     * Store bookmark
+     *
+     * @bodyParam url string required
+     *
+     * @responseFile 201 resources/responses/User/Bookmark/store.json
+     */
+    public function store(UserBookmarkStoreRequest $request): JsonResponse
+    {
+        $bookmark = $this->repository->store($request->validated());
+
+        return response()->json(UserBookmarkResource::make($bookmark), 201);
     }
 }

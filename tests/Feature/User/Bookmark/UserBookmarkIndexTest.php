@@ -13,7 +13,8 @@ class UserBookmarkIndexTest extends TestCase
 
     private string $url = '/api/user/bookmarks';
 
-    public function testIndexWithoutParameters() {
+    public function testIndexWithoutParameters(): void
+    {
         $user = User::factory()->create();
         $this->actingAs($user);
 
@@ -40,7 +41,8 @@ class UserBookmarkIndexTest extends TestCase
         ]);
     }
 
-    public function testIndexWithQParameter() {
+    public function testIndexWithQParameter(): void
+    {
         $user = User::factory()->create();
         $this->actingAs($user);
 

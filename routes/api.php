@@ -20,5 +20,5 @@ Route::prefix('user')
     ->middleware(['auth:sanctum'])->group(function () {
 
     Route::apiResource("bookmarks", BookmarksController::class)
-        ->only(['index']);
+        ->only(['index', 'store']);
 });
