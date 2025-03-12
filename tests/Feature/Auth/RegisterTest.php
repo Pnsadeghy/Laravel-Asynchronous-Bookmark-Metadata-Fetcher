@@ -12,7 +12,7 @@ class RegisterTest extends TestCase
 
     private string $url = '/api/auth/register';
 
-    public function testUserCanRegisterWithValidData()
+    public function test_user_can_register_with_validData()
     {
         $email = 'john@example.com';
         $payload = [
@@ -48,7 +48,7 @@ class RegisterTest extends TestCase
         $user = User::query()->where('email', $email)->first();
     }
 
-    public function testUserCannotRegisterWithExistingEmail()
+    public function test_user_cannot_register_with_existing_email()
     {
         User::factory()->create([
             'email' => 'john@example.com',

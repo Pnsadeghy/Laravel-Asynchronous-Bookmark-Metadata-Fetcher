@@ -2,9 +2,11 @@
 
 namespace Tests\Feature\User\Bookmark;
 
+use App\Jobs\FetchBookmarkMetadataJob;
 use App\Models\Bookmark;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Queue;
 use Tests\TestCase;
 
 class UserBookmarkStoreTest extends TestCase
@@ -13,7 +15,7 @@ class UserBookmarkStoreTest extends TestCase
 
     private string $url = '/api/user/bookmarks';
 
-    public function testStoreSuccessfully(): void
+    public function test_store_successfully(): void
     {
         $user = User::factory()->create();
         $this->actingAs($user);
@@ -42,15 +44,13 @@ class UserBookmarkStoreTest extends TestCase
             ]);
 
         $this->assertDatabaseHas('bookmarks', [
-            'url' => $url,
-            'title' => null,
-            'description' => null,
+            'url' => $url
         ]);
 
-        #TODO check job
+        $this->assertDatabaseCount('jobs', 1);
     }
 
-    public function testStoreDuplicateUrl()
+    public function test_store_duplicate_url()
     {
         $user = User::factory()->create();
         $this->actingAs($user);

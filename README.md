@@ -33,7 +33,7 @@ This is a minimal API built with Laravel 11, designed to allow users to submit w
 - Update api documentation
   - `docker compose exec app php artisan scribe:generate`
 - Run tests
-  - `docker compose exec app ./vendor/bin/phpunit`
+  - `docker compose exec app php artisan test`
 
 
 ### Basic docker compose commands

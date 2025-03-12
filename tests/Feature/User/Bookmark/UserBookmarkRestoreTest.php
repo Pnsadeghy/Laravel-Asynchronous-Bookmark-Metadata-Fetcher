@@ -17,7 +17,7 @@ class UserBookmarkRestoreTest extends TestCase
         return "/api/user/bookmarks/{$id}/restore";
     }
 
-    public function testRestoreSuccessfully(): void
+    public function test_restore_successfully(): void
     {
         $user = User::factory()->create();
         $this->actingAs($user);

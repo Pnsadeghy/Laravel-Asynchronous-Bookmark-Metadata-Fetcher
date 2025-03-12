@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CommonIndexRequest;
 use App\Http\Requests\User\Bookmark\UserBookmarkStoreRequest;
 use App\Http\Resources\User\Bookmark\UserBookmarkResource;
+use App\Jobs\FetchBookmarkMetadataJob;
 use App\Models\Bookmark;
 use App\Repositories\Interfaces\IBookmarkRepository;
 use Illuminate\Http\JsonResponse;
@@ -56,6 +57,8 @@ class BookmarksController extends Controller
     public function store(UserBookmarkStoreRequest $request): JsonResponse
     {
         $bookmark = $this->repository->store($request->validated());
+
+        FetchBookmarkMetadataJob::dispatch($bookmark->id);
 
         return response()->json(UserBookmarkResource::make($bookmark), 201);
     }

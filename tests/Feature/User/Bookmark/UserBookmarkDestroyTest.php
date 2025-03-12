@@ -5,7 +5,6 @@ namespace Tests\Feature\User\Bookmark;
 use App\Models\Bookmark;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class UserBookmarkDestroyTest extends TestCase
@@ -17,7 +16,7 @@ class UserBookmarkDestroyTest extends TestCase
         return "/api/user/bookmarks/{$id}";
     }
 
-    public function testDestroySuccessfully()
+    public function test_destroy_successfully()
     {
         $user = User::factory()->create();
         $this->actingAs($user);

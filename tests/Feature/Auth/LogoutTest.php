@@ -14,7 +14,7 @@ class LogoutTest extends TestCase
 
     private string $url = '/api/auth/logout';
 
-    public function testAuthenticatedUserCanLogout()
+    public function test_authenticated_user_can_logout()
     {
         $user = User::factory()->create();
 
@@ -27,7 +27,7 @@ class LogoutTest extends TestCase
         $this->assertCount(0, $user->tokens);
     }
 
-    public function testGuestUserCannotLogout()
+    public function test_guest_user_cannot_logout()
     {
         $response = $this->postJson('/api/auth/logout');
 
