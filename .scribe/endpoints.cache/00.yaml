@@ -32,7 +32,7 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: verner75@example.org
+        example: hklein@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -42,15 +42,15 @@ endpoints:
         name: password
         description: 'minimum character length is 6'
         required: true
-        example: pxVS(j(
+        example: GimY7bR<X
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: verner75@example.org
-      password: pxVS(j(
+      email: hklein@example.com
+      password: GimY7bR<X
     fileParameters: []
     responses:
       -
@@ -100,7 +100,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: voluptatem
+        example: nihil
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,7 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: jack.carter@example.net
+        example: bosco.guadalupe@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,7 +120,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '\F.>t?'
+        example: 'Htwb_4O2@[O.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -130,17 +130,17 @@ endpoints:
         name: password_confirmation
         description: ''
         required: true
-        example: minus
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: voluptatem
-      email: jack.carter@example.net
-      password: '\F.>t?'
-      password_confirmation: minus
+      name: nihil
+      email: bosco.guadalupe@example.net
+      password: 'Htwb_4O2@[O.'
+      password_confirmation: sint
     fileParameters: []
     responses:
       -
@@ -194,7 +194,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h41ZacD68g3fkVPeEa56bvd'
+      - 'Bearer 3Vha65df4PEeZ1b6vk8gaDc'
     controller: null
     method: null
     route: null

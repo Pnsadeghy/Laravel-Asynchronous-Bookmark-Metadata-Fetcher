@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Laravel Documentation</title>
+    <title>Asynchronous Bookmark Metadata Fetcher Documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
+        var tryItOutBaseUrl = "http://localhost:8000";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -82,6 +82,16 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-bookmarks" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="bookmarks">
+                    <a href="#bookmarks">Bookmarks</a>
+                </li>
+                                    <ul id="tocify-subheader-bookmarks" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="bookmarks-GETapi-user-bookmarks">
+                                <a href="#bookmarks-GETapi-user-bookmarks">All bookmarks</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
             </div>
 
     <ul class="toc-footer" id="toc-footer">
@@ -100,7 +110,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>http://localhost:8000</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -128,19 +138,19 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/auth/login" \
+    "http://localhost:8000/api/auth/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"verner75@example.org\",
-    \"password\": \"pxVS(j(\"
+    \"email\": \"hklein@example.com\",
+    \"password\": \"GimY7bR&lt;X\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/auth/login"
+    "http://localhost:8000/api/auth/login"
 );
 
 const headers = {
@@ -149,8 +159,8 @@ const headers = {
 };
 
 let body = {
-    "email": "verner75@example.org",
-    "password": "pxVS(j("
+    "email": "hklein@example.com",
+    "password": "GimY7bR&lt;X"
 };
 
 fetch(url, {
@@ -253,10 +263,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-auth-login"
-               value="verner75@example.org"
+               value="hklein@example.com"
                data-component="body">
     <br>
-<p>Example: <code>verner75@example.org</code></p>
+<p>Example: <code>hklein@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -264,10 +274,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth-login"
-               value="pxVS(j("
+               value="GimY7bR<X"
                data-component="body">
     <br>
-<p>minimum character length is 6 Example: <code>pxVS(j(</code></p>
+<p>minimum character length is 6 Example: <code>GimY7bR&lt;X</code></p>
         </div>
         </form>
 
@@ -284,21 +294,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/auth/register" \
+    "http://localhost:8000/api/auth/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"voluptatem\",
-    \"email\": \"jack.carter@example.net\",
-    \"password\": \"\\\\F.&gt;t?\",
-    \"password_confirmation\": \"minus\"
+    \"name\": \"nihil\",
+    \"email\": \"bosco.guadalupe@example.net\",
+    \"password\": \"Htwb_4O2@[O.\",
+    \"password_confirmation\": \"sint\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/auth/register"
+    "http://localhost:8000/api/auth/register"
 );
 
 const headers = {
@@ -307,10 +317,10 @@ const headers = {
 };
 
 let body = {
-    "name": "voluptatem",
-    "email": "jack.carter@example.net",
-    "password": "\\F.&gt;t?",
-    "password_confirmation": "minus"
+    "name": "nihil",
+    "email": "bosco.guadalupe@example.net",
+    "password": "Htwb_4O2@[O.",
+    "password_confirmation": "sint"
 };
 
 fetch(url, {
@@ -413,10 +423,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-auth-register"
-               value="voluptatem"
+               value="nihil"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>nihil</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -424,10 +434,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-auth-register"
-               value="jack.carter@example.net"
+               value="bosco.guadalupe@example.net"
                data-component="body">
     <br>
-<p>Example: <code>jack.carter@example.net</code></p>
+<p>Example: <code>bosco.guadalupe@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -435,10 +445,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth-register"
-               value="\F.>t?"
+               value="Htwb_4O2@[O."
                data-component="body">
     <br>
-<p>Example: <code>\F.&gt;t?</code></p>
+<p>Example: <code>Htwb_4O2@[O.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
@@ -446,10 +456,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password_confirmation"                data-endpoint="POSTapi-auth-register"
-               value="minus"
+               value="sint"
                data-component="body">
     <br>
-<p>Example: <code>minus</code></p>
+<p>Example: <code>sint</code></p>
         </div>
         </form>
 
@@ -467,7 +477,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/auth/logout" \
+    "http://localhost:8000/api/auth/logout" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -475,7 +485,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/auth/logout"
+    "http://localhost:8000/api/auth/logout"
 );
 
 const headers = {
@@ -574,6 +584,245 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
+
+                <h1 id="bookmarks">Bookmarks</h1>
+
+    <p>API endpoints for managing user Bookmarks</p>
+
+                                <h2 id="bookmarks-GETapi-user-bookmarks">All bookmarks</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-user-bookmarks">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/user/bookmarks?q=officiis&amp;page=12&amp;per_page=1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"q\": \"dolor\",
+    \"per_page\": 31,
+    \"page\": 44
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/user/bookmarks"
+);
+
+const params = {
+    "q": "officiis",
+    "page": "12",
+    "per_page": "1",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "q": "dolor",
+    "per_page": 31,
+    "page": 44
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user-bookmarks">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;uuid&quot;,
+            &quot;url&quot;: &quot;url&quot;,
+            &quot;title&quot;: &quot;Title&quot;,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;date&quot;,
+            &quot;deleted&quot;: false
+        }
+    ],
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;per_page&quot;: 10,
+        &quot;total&quot;: 2
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user-bookmarks" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user-bookmarks"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user-bookmarks"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user-bookmarks" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user-bookmarks">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user-bookmarks" data-method="GET"
+      data-path="api/user/bookmarks"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user-bookmarks', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user-bookmarks"
+                    onclick="tryItOut('GETapi-user-bookmarks');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user-bookmarks"
+                    onclick="cancelTryOut('GETapi-user-bookmarks');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user-bookmarks"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user/bookmarks</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-user-bookmarks"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-user-bookmarks"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-user-bookmarks"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>q</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="q"                data-endpoint="GETapi-user-bookmarks"
+               value="officiis"
+               data-component="query">
+    <br>
+<p>Example: <code>officiis</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page"                data-endpoint="GETapi-user-bookmarks"
+               value="12"
+               data-component="query">
+    <br>
+<p>Example: <code>12</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-user-bookmarks"
+               value="1"
+               data-component="query">
+    <br>
+<p>Example: <code>1</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>q</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="q"                data-endpoint="GETapi-user-bookmarks"
+               value="dolor"
+               data-component="body">
+    <br>
+<p>Example: <code>dolor</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-user-bookmarks"
+               value="31"
+               data-component="body">
+    <br>
+<p>Must be at least 1. Example: <code>31</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page"                data-endpoint="GETapi-user-bookmarks"
+               value="44"
+               data-component="body">
+    <br>
+<p>Must be at least 1. Example: <code>44</code></p>
+        </div>
+        </form>
 
             
 
